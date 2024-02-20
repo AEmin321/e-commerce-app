@@ -1,11 +1,8 @@
-import { Search, ShoppingCart } from "@mui/icons-material"
+import { Search, ShoppingCartOutlined } from "@mui/icons-material"
 import Badge from '@mui/material/Badge';
 import styled from "styled-components"
 
 
-
-
-const Navbar = () => {
     const Container = styled.div`
       height:60px;
     `
@@ -20,12 +17,14 @@ const Navbar = () => {
       flex: 1;
       display: flex;
       align-items: center;
+      justify-content: flex-end;
     `
 
     const MenuItem = styled.div`
-      font-size: 16px;
-      font-weight: 500;
-      margin: 5px;
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 5px 10px;
+      cursor: pointer;
     `
 
     const Middle = styled.div`
@@ -34,15 +33,16 @@ const Navbar = () => {
 
     const SearchContainer = styled.div`
       border: 1px solid lightgray;
-      border-radius: 3px;
+      border-radius: 5px;
       display: flex;
       align-items: center;
-      padding: 5px;
+      padding: 6px;
     `
 
     const Input = styled.input`
       border: none;
       outline: none;
+      background-color: transparent;
       flex: 1;
     `
 
@@ -51,10 +51,11 @@ const Navbar = () => {
     `
 
     const Logo = styled.h1`
-      font-size: 35px;
-      font-weight: 800;
+      font-size: 25px;
+      font-weight: 600;
     `
 
+const Navbar = () => {
   return (
     <Container>
       <Wrapper>
@@ -64,15 +65,15 @@ const Navbar = () => {
         <Middle>
           <SearchContainer>
             <Input />
-            <Search />
+            <Search style={{color:"gray" , cursor:"pointer"}}/>
           </SearchContainer>
         </Middle>
         <Right>
           <MenuItem>SIGN UP</MenuItem>
           <MenuItem>LOGIN</MenuItem>
           <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCart color="action" />
+            <Badge badgeContent={99} color="secondary">
+              <ShoppingCartOutlined color="action" />
             </Badge>
           </MenuItem>
         </Right>
