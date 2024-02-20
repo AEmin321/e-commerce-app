@@ -1,9 +1,11 @@
 import Navbar from '../components/Navbar'
+import Announcement from '../components/Announcement'
 
 const Home = () => {
   return (
     <div>
-        <Navbar />
+      <Announcement />
+      <Navbar />
     </div>
   )
 }
