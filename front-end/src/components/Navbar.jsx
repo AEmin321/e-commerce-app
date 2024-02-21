@@ -34,20 +34,18 @@ import styled from 'styled-components'
     const SearchContainer = styled.div`
       display: flex;
       align-items: center;
+      background-color: #f1f1f1;
+      padding: 5px 7px;
+      border-radius: 10px;
     `
 
     const Input = styled.input`
       border: none;
-      background-color: #ececec;
-      padding: 7px 10px;
-      /* border-radius: 10px; */
+      background-color: transparent;
       outline: none;
+      font-size: 14px;
       margin-right: 4px;
       flex: 1;
-
-      &:focus {
-        border: 1px solid #4E65FF;
-      }
     `
 
     const Left = styled.div`
@@ -69,7 +67,7 @@ const Navbar = () => {
         <Middle>
           <SearchContainer>
             <Input />
-            <Search style={{color:"gray", cursor:"pointer"}}/>
+            <Search style={{color:"#4E65FF", cursor:"pointer"}}/>
           </SearchContainer>
         </Middle>
         <Right>

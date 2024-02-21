@@ -7,12 +7,12 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     color: white;
+    font-size: 14px;
 `
 
 const Announcement = () => {
   return (
-    <Container>* This will be the text on announcment bar above</Container>
-    
+    <Container>Welcome to Hat Meow! Purr-fect Hats for Fabulous Felines! Shop Now and Let Your Cats Style Shine!</Container>
   )
 }
 
