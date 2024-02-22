@@ -1,16 +1,16 @@
-import { Search, ShoppingCartOutlined } from '@mui/icons-material'
+import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
 import Badge from '@mui/material/Badge'
 import styled from 'styled-components'
 
 
     const Container = styled.div`
-      height:60px;
+      height:70px;
     `
     const Wrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 15px 55px;
     `
 
     const Right = styled.div`
@@ -34,9 +34,8 @@ import styled from 'styled-components'
     const SearchContainer = styled.div`
       display: flex;
       align-items: center;
-      background-color: #f1f1f1;
+      background-color: #fcf9f9;
       padding: 5px 7px;
-      border-radius: 10px;
     `
 
     const Input = styled.input`
@@ -66,13 +65,13 @@ const Navbar = () => {
         </Left>
         <Middle>
           <SearchContainer>
-            <Input />
+            <Input placeholder="Search"/>
             <Search style={{color:"#4E65FF", cursor:"pointer"}}/>
           </SearchContainer>
         </Middle>
         <Right>
-          <MenuItem>SIGN UP</MenuItem>
-          <MenuItem>LOGIN</MenuItem>
+          <MenuItem><AccountCircleOutlined color="action"/></MenuItem>
+          <MenuItem><FavoriteBorderOutlined color="action"/></MenuItem>
           <MenuItem>
             <Badge badgeContent={99} color="primary">
               <ShoppingCartOutlined color="action" />

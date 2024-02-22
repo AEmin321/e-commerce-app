@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-    height: 35px;
-    background: linear-gradient(45deg, hsla(232, 100%, 65%, 1) 0%, hsla(188, 96%, 78%, 1) 100%);
+    height: 30px;
+    background: #1d1d1d;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 14px;
+    font-size: 11px;
 `
 
 const Announcement = () => {
