@@ -56,6 +56,7 @@ const InfoContainer = styled.div`
     flex: 1;
     padding: 0 55px;
     align-self: center;
+    max-width: 100%;
 `
 
 const Minitext = styled.h6`
