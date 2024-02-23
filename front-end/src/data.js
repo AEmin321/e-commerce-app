@@ -43,3 +43,38 @@ export const categories = [
         img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/d11312e6-b9a1-449b-8765-7866812c4e7d/Default_A_playful_cat_wearing_a_stylish_sun_hat_surrounded_by_1.jpg"
     }
 ]
+
+export const trendingProducts = [
+    {
+        id:1,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/23e84df4-804b-4b85-9817-dd1cc09b1ff6/Default_A_unique_and_visually_descriptive_prompt_that_showcase_2.jpg"
+    },
+    {
+        id:2,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/0aa03166-7b4f-4c85-a98b-a7654e0a3d29/Default_A_unique_and_visually_descriptive_prompt_that_showcase_3.jpg"
+    },
+    {
+        id:3,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/23e84df4-804b-4b85-9817-dd1cc09b1ff6/Default_A_unique_and_visually_descriptive_prompt_that_showcase_2.jpg"
+    },
+    {
+        id:4,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/0aa03166-7b4f-4c85-a98b-a7654e0a3d29/Default_A_unique_and_visually_descriptive_prompt_that_showcase_3.jpg"
+    },
+    {
+        id:5,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/23e84df4-804b-4b85-9817-dd1cc09b1ff6/Default_A_unique_and_visually_descriptive_prompt_that_showcase_2.jpg"
+    },
+    {
+        id:6,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/0aa03166-7b4f-4c85-a98b-a7654e0a3d29/Default_A_unique_and_visually_descriptive_prompt_that_showcase_3.jpg"
+    },
+    {
+        id:7,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/23e84df4-804b-4b85-9817-dd1cc09b1ff6/Default_A_unique_and_visually_descriptive_prompt_that_showcase_2.jpg"
+    },
+    {
+        id:8,
+        img:"https://cdn.leonardo.ai/users/22c10e36-2d54-496e-9e6d-134b62eeef09/generations/0aa03166-7b4f-4c85-a98b-a7654e0a3d29/Default_A_unique_and_visually_descriptive_prompt_that_showcase_3.jpg"
+    }
+]
