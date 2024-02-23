@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Container = styled.div`
     margin: 4rem 0;
-    height: 70vh;
+    height: 65vh;
     color: white;
     background-color: #43a4e3;
     display: flex;
@@ -30,7 +30,6 @@ const InputContainer = styled.div`
     background-color: white;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 2rem;
 `
 
 const Input = styled.input`
