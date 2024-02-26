@@ -1,15 +1,18 @@
 import styled from "styled-components"
+import { mobile } from "../responsive"
 
 const Container = styled.div`
     flex: 1;
     margin: 3px;
     height: 75vh;
     position: relative;
+    text-align: center;
 `
 const Image = styled.img`
     height: 100%;
     width: 100%;
     object-fit: cover;
+    ${mobile({ height: "45vh" })}
 `
 
 const InfoContainer = styled.div`

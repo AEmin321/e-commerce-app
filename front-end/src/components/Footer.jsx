@@ -1,9 +1,11 @@
 import { LocationCityOutlined, Mail, SupportAgent } from "@mui/icons-material"
 import styled from "styled-components"
+import { mobile, footer } from "../responsive"
 
 const Container = styled.div`
     padding: 2rem 4.3rem;
     color: #353535;
+    ${mobile({padding:"1rem 2rem"})}
 `
 
 const InfoContainer = styled.div`
@@ -32,17 +34,18 @@ const Email = styled.p`
 
 const Categories = styled.div`
     flex: 1;
+    ${mobile({ margin:"0 10px"})}
 `
 
 const List = styled.ul`
     padding: 0;
     margin: 0;
     list-style: none;
+    font-size: 13px;
 `
 
 const ListItem = styled.li`
     margin: 10px 0;
-    font-size: 14px;
 `
 
 const About = styled.div`
@@ -51,6 +54,7 @@ const About = styled.div`
 
 const News = styled.div`
     flex: 1;
+    ${mobile({ display:"none"})}
 `
 
 const LinksContainer = styled.div`
@@ -69,6 +73,7 @@ const SocialIcons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    ${footer({display:"none"})}
 `
 
 const Icon = styled.div`

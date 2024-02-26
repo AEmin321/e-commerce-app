@@ -1,16 +1,19 @@
 import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
 import Badge from '@mui/material/Badge'
 import styled from 'styled-components'
+import { mobile } from '../responsive'
 
 
     const Container = styled.div`
       height:70px;
+      ${mobile({ height: "50px" })}
     `
     const Wrapper = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 55px;
+      ${mobile({ padding: "10px 0px" })}
     `
 
     const Right = styled.div`
@@ -25,6 +28,7 @@ import styled from 'styled-components'
       font-weight: 300;
       margin: 5px 10px;
       cursor: pointer;
+      ${mobile({ fontSize: "14px"})}
     `
 
     const Middle = styled.div`
@@ -36,6 +40,7 @@ import styled from 'styled-components'
       align-items: center;
       background-color: #fcf9f9;
       padding: 5px 7px;
+      /* ${mobile({ width: "50px" })} */
     `
 
     const Input = styled.input`
@@ -45,6 +50,7 @@ import styled from 'styled-components'
       font-size: 14px;
       margin-right: 4px;
       flex: 1;
+      ${mobile({ width: "85px" })}
     `
 
     const Left = styled.div`

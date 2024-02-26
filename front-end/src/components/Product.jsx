@@ -10,6 +10,7 @@ const Links = styled.div`
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     transition: all 0.5s ease;
     align-items: center;
     background-color: rgba(0, 110, 255, 0.2);
@@ -20,6 +21,7 @@ const Container = styled.div`
     flex: 1;
     margin: 3px;
     min-width: 280px;
+    /* height: 300px; */
     position: relative;
     display: flex;
     justify-content: center;

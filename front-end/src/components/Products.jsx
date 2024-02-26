@@ -9,7 +9,7 @@ const Container = styled.div`
 
 const ProductsWrapper = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin: 0 3px;
     flex-wrap: wrap;
 `

@@ -2,6 +2,7 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material"
 import styled from "styled-components"
 import { sliderData } from "../data"
 import { useState } from "react"
+import { mobile, mdMobile } from "../responsive"
 
 const Container = styled.div`
     height: 100vh;
@@ -40,23 +41,25 @@ const Slide = styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
+    align-items: center;
     background-color: #${props=>props.bg};
 `
 
 const ImageContainer = styled.div`
     flex: 1;
     height: 100%;
+    ${mobile({ display: "none" })}
 `
 
 const Image = styled.img`
-    height: 100%;
+    max-height: 100%;
 `
 
 const InfoContainer = styled.div`
     flex: 1;
     padding: 0 55px;
     align-self: center;
-    max-width: 100%;
+    ${mobile({ padding: "17px" })}
 `
 
 const Minitext = styled.h6`
@@ -68,12 +71,13 @@ const Title = styled.h1`
     font-weight: 700;
     margin-bottom: 17px;
     letter-spacing: -2px;
+    ${mdMobile({ fontSize: "35px"})}
 `
 
 const Description = styled.p`
     font-size: 13px;
     margin-bottom: 25px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 `
 
 const Button = styled.button`
