@@ -16,7 +16,7 @@ export const mdMobile = (props) => {
   `;
 };
 
-export const footer = (props) => {
+export const smMobile = (props) => {
   return css`
     @media only screen and (max-width: 646px) {
       ${props}

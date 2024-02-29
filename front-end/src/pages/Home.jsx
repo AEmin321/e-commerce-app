@@ -5,6 +5,7 @@ import Categories from '../components/Categories'
 import Products from '../components/Products'
 import NewsLetter from '../components/NewsLetter'
 import Footer from '../components/Footer'
+import SectionHeading from '../components/SectionHeading'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Navbar />
       <HeroSlider />
       <Categories />
+      <SectionHeading name="TRENDING NOW" info="WHAT PEOPLE ARE BUYING"/>
       <Products />
       <NewsLetter />
       <Footer />

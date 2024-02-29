@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { trendingProducts } from "../data"
-import SectionHeading from "./SectionHeading"
 import Product from "./Product"
 
 const Container = styled.div`
@@ -17,7 +16,7 @@ const ProductsWrapper = styled.div`
 const Products = () => {
   return (
     <Container>
-        <SectionHeading name="TRENDING NOW" info="WHAT PEOPLE ARE BUYING"/>
+        {/* <SectionHeading name="TRENDING NOW" info="WHAT PEOPLE ARE BUYING"/> */}
         <ProductsWrapper>{trendingProducts.map(product=>(
             <Product key={product.id} product={product}/>
         ))}</ProductsWrapper>

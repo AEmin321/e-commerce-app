@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { footer, mdMobile } from "../responsive"
+import { smMobile, mdMobile } from "../responsive"
 
 const Container = styled.div`
     height: 100vh;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     background-color: white;
     width: 30%;
     padding: 37px;
-    ${footer({width:"70%"})}
+    ${smMobile({width:"70%"})}
     ${mdMobile({width:"65%"})}
 `
 

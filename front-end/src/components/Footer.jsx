@@ -1,6 +1,6 @@
 import { LocationCityOutlined, Mail, SupportAgent } from "@mui/icons-material"
 import styled from "styled-components"
-import { mobile, footer } from "../responsive"
+import { mobile, smMobile } from "../responsive"
 
 const Container = styled.div`
     padding: 2rem 4.3rem;
@@ -73,7 +73,7 @@ const SocialIcons = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ${footer({display:"none"})}
+    ${smMobile({display:"none"})}
 `
 
 const Icon = styled.div`
