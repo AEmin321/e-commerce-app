@@ -4,12 +4,14 @@ import Announcement from "../components/Announcement"
 import Footer from "../components/Footer"
 import NewsLetter from "../components/NewsLetter"
 import { Add, Remove } from "@mui/icons-material"
+import { smMobile, mobile } from "../responsive"
 
 const Container = styled.div``
 
 const Wrapper = styled.div`
   display: flex;
   padding: 50px 50px 0 50px;
+  ${smMobile({flexDirection:"column", padding:"0 0 20px 0"})}
 `
 
 const ImageContainer = styled.div`
@@ -20,16 +22,19 @@ const Img = styled.img`
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  ${smMobile({height:"50%"})}
 `
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 0 50px;
+  ${smMobile({padding:"30px"})}
 `
 
 const Title = styled.h1`
   font-weight: 400;
   font-size: 42px;
+  ${mobile({fontSize:"30px"})}
 `
 
 const Description = styled.p`
