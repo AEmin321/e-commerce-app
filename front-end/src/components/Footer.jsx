@@ -1,4 +1,4 @@
-import { LocationCityOutlined, Mail, SupportAgent } from "@mui/icons-material"
+import { Mail, SupportAgent } from "@mui/icons-material"
 import styled from "styled-components"
 import { mobile, smMobile } from "../responsive"
 
@@ -103,7 +103,7 @@ const Footer = () => {
                     <ListItem>Sun Hats</ListItem>
                     <ListItem>Winter Hats</ListItem>
                     <ListItem>Fedoras</ListItem>
-                    <ListItem>firstone</ListItem>
+                    <ListItem>More</ListItem>
                 </List>
             </Categories>
             <About>
@@ -120,7 +120,7 @@ const Footer = () => {
                     <ListItem>New Products</ListItem>
                     <ListItem>Promotions and Sales</ListItem>
                     <ListItem>Events and Exibitions</ListItem>
-                    <ListItem>thirdone</ListItem>
+                    <ListItem>Trending Products</ListItem>
                 </List>
             </News>
         </InfoContainer>
@@ -131,10 +131,7 @@ const Footer = () => {
                     <Mail style={{marginRight:"10px", color:"#353535"}}/>HAmini@me-wow.com
                 </Icon>
                 <Icon>
-                    <SupportAgent style={{marginRight:"10px", color:"#353535"}}/>23234.234234.32
-                </Icon>
-                <Icon>
-                    <LocationCityOutlined style={{marginRight:"10px", color:"#353535"}}/> unknown
+                    <SupportAgent style={{marginRight:"10px", color:"#353535"}}/>232-234-32
                 </Icon>
             </SocialIcons>
             <TermsContainer>

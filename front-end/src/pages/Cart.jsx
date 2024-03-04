@@ -98,6 +98,8 @@ const AmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  ${smMobile({alignItems:"center",marginBottom:"0"})}
 `
 
 const Amount = styled.span`
@@ -143,6 +145,7 @@ const CheckoutBtn = styled.button`
   border: none;
   background-color: #43a4e3;
   color: white;
+  cursor: pointer;
 
   &:hover {
     background-color: black;
