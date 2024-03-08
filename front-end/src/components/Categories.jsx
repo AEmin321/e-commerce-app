@@ -1,11 +1,10 @@
 import styled from "styled-components"
 import Category from "./Category"
 import { categories } from "../data"
-import SectionHeading from "./SectionHeading"
 import { mobile } from "../responsive"
 
 const Container = styled.div`
-    /* background-color: red; */
+    padding: 3.75rem 2rem;
 `
 const Content = styled.div`
     display: flex;
@@ -17,7 +16,6 @@ const Content = styled.div`
 const Categories = () => {
   return (
     <Container>
-        <SectionHeading name="CATEGORIES" info="EXPLORE OUR CATEGORIES"/>
         <Content>{categories.map(category=>(
             <Category key={category.id} category={category}/>
         ))}</Content>

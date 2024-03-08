@@ -3,20 +3,17 @@ import { trendingProducts } from "../data"
 import Product from "./Product"
 
 const Container = styled.div`
-    
+    margin: 6.9rem 3.4rem;
 `
 
 const ProductsWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin: 0 3px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `
 
 const Products = () => {
   return (
     <Container>
-        {/* <SectionHeading name="TRENDING NOW" info="WHAT PEOPLE ARE BUYING"/> */}
         <ProductsWrapper>{trendingProducts.map(product=>(
             <Product key={product.id} product={product}/>
         ))}</ProductsWrapper>

@@ -1,19 +1,31 @@
-import { AccountCircleOutlined, FavoriteBorderOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material'
+import {Close, FavoriteBorderOutlined, LocalMallOutlined, Person3Outlined, Search} from '@mui/icons-material'
 import Badge from '@mui/material/Badge'
 import styled from 'styled-components'
 import { mobile } from '../responsive'
+import { useState } from 'react'
 
 
     const Container = styled.div`
-      height:70px;
-      ${mobile({ height: "50px" })}
     `
     const Wrapper = styled.div`
+      height:70px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 15px 55px;
-      ${mobile({ padding: "10px 0px" })}
+      ${mobile({ padding: "10px 0px",height: "50px"})}
+    `
+
+    const InputContainer = styled.div`
+      padding: 10px 55px;
+      border-top:1px solid rgba(66, 66, 66, 0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    `
+
+    const CloseButton = styled.div`
+      cursor: pointer;
     `
 
     const Right = styled.div`
@@ -33,14 +45,7 @@ import { mobile } from '../responsive'
 
     const Middle = styled.div`
       flex: 1;
-    `
-
-    const SearchContainer = styled.div`
-      display: flex;
-      align-items: center;
-      background-color: #fcf9f9;
-      padding: 5px 7px;
-      /* ${mobile({ width: "50px" })} */
+      text-align: center;
     `
 
     const Input = styled.input`
@@ -59,32 +64,48 @@ import { mobile } from '../responsive'
 
     const Logo = styled.h1`
       font-size: 25px;
-      font-weight: 600;
+      font-weight: 700;
     `
 
 const Navbar = () => {
+  const [isSearchOpen,setSearchOpen] = useState(false)
+
+  const handleToggle = () => {
+    setSearchOpen(!isSearchOpen)
+  }
+
+  const handleClose = () => {
+    setSearchOpen(false)
+  }
+
   return (
     <Container>
       <Wrapper>
         <Left>
-          <Logo>W.</Logo>
+          <Search onClick={handleToggle} color="action" style={{cursor:"pointer"}}/>
         </Left>
         <Middle>
-          <SearchContainer>
-            <Input placeholder="Search"/>
-            <Search style={{color:"#4E65FF", cursor:"pointer"}}/>
-          </SearchContainer>
+          <Logo>MEWOW-HATS</Logo>
         </Middle>
         <Right>
-          <MenuItem><AccountCircleOutlined color="action"/></MenuItem>
+          <MenuItem><Person3Outlined color="action"/></MenuItem>
           <MenuItem><FavoriteBorderOutlined color="action"/></MenuItem>
           <MenuItem>
-            <Badge badgeContent={99} color="primary">
-              <ShoppingCartOutlined color="action" />
+            <Badge badgeContent={9} color="primary">
+              <LocalMallOutlined color="action" />
             </Badge>
           </MenuItem>
         </Right>
-      </Wrapper>
+      </Wrapper>{
+        isSearchOpen && (
+          <InputContainer>
+            <Input placeholder="Search"/>
+            <CloseButton onClick={handleClose}>
+              <Close />
+            </CloseButton>
+          </InputContainer>
+        )
+      }
     </Container>
   )
 }

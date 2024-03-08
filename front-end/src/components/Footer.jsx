@@ -1,10 +1,8 @@
-import { Mail, SupportAgent } from "@mui/icons-material"
 import styled from "styled-components"
-import { mobile, smMobile } from "../responsive"
+import { mobile } from "../responsive"
 
 const Container = styled.div`
     padding: 2rem 4.3rem;
-    color: #353535;
     ${mobile({padding:"1rem 2rem"})}
 `
 
@@ -69,20 +67,6 @@ const Text = styled.p`
     color: #353535;
 `
 
-const SocialIcons = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    ${smMobile({display:"none"})}
-`
-
-const Icon = styled.div`
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    margin: 0 7px;
-`
-
 const TermsContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -93,7 +77,7 @@ const Footer = () => {
     <Container>
         <InfoContainer>
             <BrandInfo>
-                <Logo>W.</Logo>
+                <Logo>MEWOW-HATS</Logo>
                 <Title>EMAIL</Title>
                 <Email>HAmini@me-wow.com</Email>
             </BrandInfo>
@@ -126,14 +110,6 @@ const Footer = () => {
         </InfoContainer>
         <LinksContainer>
             <Text>©2024 HAmini</Text>
-            <SocialIcons>
-                <Icon>
-                    <Mail style={{marginRight:"10px", color:"#353535"}}/>HAmini@me-wow.com
-                </Icon>
-                <Icon>
-                    <SupportAgent style={{marginRight:"10px", color:"#353535"}}/>232-234-32
-                </Icon>
-            </SocialIcons>
             <TermsContainer>
                 <Text>Terms of use</Text>
                 <Text>Privacy Policy</Text>

@@ -3,10 +3,8 @@ import { mobile } from "../responsive"
 
 const Container = styled.div`
     flex: 1;
-    margin: 3px;
-    height: 75vh;
-    position: relative;
-    text-align: center;
+    margin: 3px 1.4rem;
+    height: 90vh;
 `
 const Image = styled.img`
     height: 100%;
@@ -16,31 +14,44 @@ const Image = styled.img`
 `
 
 const InfoContainer = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 `
 
 const Title = styled.h1`
-    color: white;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    font-size: 2.5rem;
+    margin: 20px 0 10px 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+`
+
+const Description = styled.p`
+    color: #2e2e2e;
+    line-height: 22px;
 `
 
 const Button = styled.button`
-    padding: 10px;
+    margin-top: 1rem;
+    font-size: 1rem;
     border: none;
+    margin-left: 0;
+    padding-left: 0;
+    background-color: transparent;
     cursor: pointer;
-    background-color: white;
+    position: relative;
+    transition: color 0.3s;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 90%;
+        height: 1px;
+        background-color: black;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s;
+    }
+
+    &:hover::before {
+        width: 0;
+    }
 `
 
 const Category = ({category}) => {
@@ -49,7 +60,8 @@ const Category = ({category}) => {
         <Image src={category.img} alt="category image" />
         <InfoContainer>
             <Title>{category.name}</Title>
-            <Button>SHOP NOW</Button>
+            <Description>{category.description}</Description>
+            <Button>Explore</Button>
         </InfoContainer>
     </Container>
   )

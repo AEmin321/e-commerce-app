@@ -13,7 +13,7 @@ const Links = styled.div`
     align-items: center;
     transition: all 0.5s ease;
     align-items: center;
-    background-color: rgba(0, 110, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.24);
     z-index: 3;
 `
 
