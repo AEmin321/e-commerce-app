@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { mobile } from "../responsive"
+import { mobile, smMobile } from "../responsive"
 
 const Container = styled.div`
     padding: 2rem 4.3rem;
@@ -19,6 +19,8 @@ const Logo = styled.div`
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 800;
+
+    ${smMobile({fontSize:"1.6rem"})}
 `
 
 const Title = styled.h5`
@@ -50,10 +52,10 @@ const About = styled.div`
     flex: 1;
 `
 
-const News = styled.div`
-    flex: 1;
-    ${mobile({ display:"none"})}
-`
+// const News = styled.div`
+//     flex: 1;
+//     ${mobile({ display:"none"})}
+// `
 
 const LinksContainer = styled.div`
     display: flex;
@@ -98,7 +100,7 @@ const Footer = () => {
                     <ListItem>Contact</ListItem>
                 </List>
             </About>
-            <News>
+            {/* <News>
                 <Title>NEWS</Title>
                 <List>
                     <ListItem>New Products</ListItem>
@@ -106,7 +108,7 @@ const Footer = () => {
                     <ListItem>Events and Exibitions</ListItem>
                     <ListItem>Trending Products</ListItem>
                 </List>
-            </News>
+            </News> */}
         </InfoContainer>
         <LinksContainer>
             <Text>©2024 HAmini</Text>

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {  smMobile } from '../responsive'
 
 const Container = styled.div`
     min-height: 30px;
@@ -9,6 +10,8 @@ const Container = styled.div`
     color: white;
     font-size: 11px;
     text-align: center;
+
+    ${smMobile({fontSize:"9px"})}
 `
 
 const Announcement = () => {

@@ -1,5 +1,3 @@
-import Navbar from '../components/Navbar'
-import Announcement from '../components/Announcement'
 import HeroSection from '../components/HeroSection'
 import Categories from '../components/Categories'
 import Products from '../components/Products'
@@ -9,8 +7,8 @@ import Footer from '../components/Footer'
 const Home = () => {
   return (
     <div>
-      <Announcement />
-      <Navbar />
+      {/* <Announcement />
+      <Navbar /> */}
       <HeroSection />
       <Categories />
       <Products />

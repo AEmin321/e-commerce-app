@@ -1,7 +1,7 @@
 import {Close, FavoriteBorderOutlined, LocalMallOutlined, Person3Outlined, Search} from '@mui/icons-material'
 import Badge from '@mui/material/Badge'
 import styled from 'styled-components'
-import { mobile } from '../responsive'
+import { mobile, smMobile } from '../responsive'
 import { useState } from 'react'
 
 
@@ -13,15 +13,18 @@ import { useState } from 'react'
       justify-content: space-between;
       align-items: center;
       padding: 15px 55px;
-      ${mobile({ padding: "10px 0px",height: "50px"})}
+      ${mobile({ padding: "10px 7px",height: "50px"})}
     `
 
     const InputContainer = styled.div`
+      height: 49px;
       padding: 10px 55px;
       border-top:1px solid rgba(66, 66, 66, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      transition: height 0.5s ease;
     `
 
     const CloseButton = styled.div`
@@ -59,12 +62,13 @@ import { useState } from 'react'
     `
 
     const Left = styled.div`
-      flex: 1;
+      flex: auto;
     `
 
     const Logo = styled.h1`
       font-size: 25px;
       font-weight: 700;
+      ${smMobile({fontSize:"17px"})}
     `
 
 const Navbar = () => {

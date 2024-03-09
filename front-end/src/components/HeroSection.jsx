@@ -1,9 +1,17 @@
 import styled from "styled-components"
-import { mobile, mdMobile } from "../responsive"
+import { smMobile } from "../responsive"
+import Navbar from "./Navbar"
+import Announcement from "./Announcement"
 
 const Container = styled.div`
     height: 100vh;
-    width: 100%;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+`
+
+const HeroWrapper = styled.div`
+    flex: 1;
     position: relative;
     overflow: hidden;
 `
@@ -17,9 +25,11 @@ const Img = styled.img`
 const HeroInfo = styled.div`
     position: absolute;
     color: white;
-    bottom: 3.75rem;
-    left: 3.75rem;
+    bottom: 0;
+    left: 0;
     padding: 3.75rem;
+
+    ${smMobile({bottom:"1rem",left:"1rem",padding:"1.5rem"})}
 `
 
 const Title = styled.h1`
@@ -48,12 +58,16 @@ const Button = styled.button`
 const HeroSection = () => {
     return (
         <Container>
+            <Announcement />
+            <Navbar />
+            <HeroWrapper>
             <Img src="https://cdn.leonardo.ai/users/7bc1faa4-27be-45aa-a3c6-99ceb897b624/generations/b2560b1f-a0f2-4994-bc4d-85601a758f61/Default_A_sleek_and_sophisticated_cat_in_a_hat_rendered_in_a_m_1.jpg" alit="image of a cat bg" />
             <HeroInfo>
                 <Title>Hats That Make Your Cat Say Me-Wow!</Title>
                 <Description><em>Meow-tastic hats for cats who love to stand out! Explore our selection and <br/>let your furry friend express their inner fashionista!</em></Description>
                 <Button>FIND OUT MORE</Button>
             </HeroInfo>
+        </HeroWrapper>
         </Container>
     )
 }

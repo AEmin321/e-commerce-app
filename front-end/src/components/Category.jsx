@@ -1,20 +1,23 @@
 import styled from "styled-components"
-import { mobile } from "../responsive"
+import { mobile, smMobile } from "../responsive"
 
 const Container = styled.div`
     flex: 1;
     margin: 3px 1.4rem;
-    height: 90vh;
+
+    ${mobile({marginBottom:"7px"})}
+    ${smMobile({margin:"5px 7px"})}
 `
 const Image = styled.img`
-    height: 100%;
+    height: 80vh;
     width: 100%;
     object-fit: cover;
+
+    ${smMobile({height:"65vh"})}
     ${mobile({ height: "45vh" })}
 `
 
-const InfoContainer = styled.div`
-`
+const InfoContainer = styled.div``
 
 const Title = styled.h1`
     margin: 20px 0 10px 0;
