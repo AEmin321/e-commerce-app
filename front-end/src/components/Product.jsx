@@ -1,14 +1,24 @@
 import { FavoriteBorderOutlined } from "@mui/icons-material"
 import styled from "styled-components"
+import LazyLoad from "react-lazy-load"
 
 const Container = styled.div`
     position: relative;
     cursor: pointer;
 `
+const ImageContainer = styled.div`
+    position: relative;
+    overflow: hidden;
+`
 
 const Image = styled.img`
     max-width: 100%;
     height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 `
 
 const InfoContainer = styled.div`
@@ -46,7 +56,11 @@ const Icon = styled.div`
 const Product = ({product}) => {
   return (
     <Container>
-        <Image src={product.img} alt="popular product image" />
+        <ImageContainer>
+            <LazyLoad>
+                <Image src={product.img} alt="popular product image" />
+            </LazyLoad>
+        </ImageContainer>
         <InfoContainer>
             <Icon>
                 <FavoriteBorderOutlined />

@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { mobile, smMobile } from "../responsive"
 
+
 const Container = styled.div`
     flex: 1;
     margin: 3px 1.4rem;
@@ -60,7 +61,7 @@ const Button = styled.button`
 const Category = ({category}) => {
   return (
     <Container>
-        <Image src={category.img} alt="category image" />
+        <Image src={category.img} alt="category image" loading="lazy"/>
         <InfoContainer>
             <Title>{category.name}</Title>
             <Description>{category.description}</Description>

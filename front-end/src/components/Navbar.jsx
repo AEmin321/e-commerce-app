@@ -14,17 +14,15 @@ import { useState } from 'react'
       align-items: center;
       padding: 15px 55px;
       ${mobile({ padding: "10px 7px",height: "50px"})}
+      ${smMobile({padding:"15px 30px"})}
     `
 
     const InputContainer = styled.div`
-      height: 49px;
       padding: 10px 55px;
       border-top:1px solid rgba(66, 66, 66, 0.2);
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      transition: height 0.5s ease;
     `
 
     const CloseButton = styled.div`
