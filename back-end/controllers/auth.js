@@ -5,9 +5,8 @@ import CryptoJS from "crypto-js";
 const authRouter = Router();
 
 authRouter.post("/login", async (req, res) => {
-  const { username, password } = req.body;
   try {
-    const user = await User.findOne({ username: username });
+    const user = await User.findOne({ username: req.body.username });
     if (!user) {
       return res.status(401).json("Wrong Credentials!!!");
     }
@@ -16,10 +15,11 @@ authRouter.post("/login", async (req, res) => {
       process.env.SECRET
     );
     const pass = hashed_password.toString(CryptoJS.enc.Utf8);
-    if (pass !== password) {
+    if (pass !== req.body.password) {
       return res.status(401).json("Wrong Password!!!");
     }
-    res.status(200).json(user);
+    const { password, ...other_data } = user._doc;
+    res.status(200).json(other_data);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
