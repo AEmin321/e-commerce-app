@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dontenv from "dotenv";
 
 import userRouter from "./controllers/users.js";
+import authRouter from "./controllers/auth.js";
 
 dontenv.config();
 const app = express();
@@ -19,6 +20,7 @@ mongoose
   });
 
 app.use("/user/hi", userRouter);
+app.use("/api/auth", authRouter);
 
 app.listen(process.env.PORT || 3002, () => {
   console.log("Server is running.");
