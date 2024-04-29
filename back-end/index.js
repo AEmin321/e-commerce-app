@@ -2,8 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import dontenv from "dotenv";
 
+import userRouter from "./controllers/users.js";
+
 dontenv.config();
 const app = express();
+app.use(express.json());
 
 console.log(process.env.MONGO_URL);
 mongoose
@@ -14,6 +17,8 @@ mongoose
   .catch((error) => {
     console.log("Can't connect to database");
   });
+
+app.use("/user/hi", userRouter);
 
 app.listen(process.env.PORT || 3002, () => {
   console.log("Server is running.");
