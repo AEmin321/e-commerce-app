@@ -1,12 +1,21 @@
 import express from "express";
-import { userAuthorization } from "../middlewares/verifyToken.js";
+import {
+  userAdminAuthorization,
+  userAuthorization,
+} from "../middlewares/verifyToken.js";
 import CryptoJS from "crypto-js";
 import User from "../models/User.js";
 
 const userRouter = express.Router();
 
-userRouter.get("/user/hi", (req, res) => {
-  res.send("hellooo welcome");
+userRouter.get("/:id", userAdminAuthorization, async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    const { password, ...otherVal } = user._doc;
+    res.status(200).json({ otherVal });
+  } catch (error) {
+    res.status(500).json("Can't find the user.");
+  }
 });
 
 userRouter.delete("/:id", userAuthorization, async (req, res) => {
