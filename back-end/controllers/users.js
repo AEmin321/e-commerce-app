@@ -10,7 +10,10 @@ const userRouter = express.Router();
 
 userRouter.get("/", userAdminAuthorization, async (req, res) => {
   try {
-    const users = await User.find();
+    const query = req.query.new;
+    const users = query
+      ? await User.find().sort({ _id: -1 }).limit(2)
+      : await User.find();
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json(error);

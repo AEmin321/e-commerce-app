@@ -32,10 +32,11 @@ authRouter.post("/login", async (req, res) => {
 });
 
 authRouter.post("/register", async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, isAdmin } = req.body;
   const user = new User({
     username: username,
     email: email,
+    isAdmin: isAdmin,
     password: CryptoJS.AES.encrypt(password, process.env.SECRET),
   });
   try {
