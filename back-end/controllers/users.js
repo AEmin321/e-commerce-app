@@ -8,6 +8,15 @@ import User from "../models/User.js";
 
 const userRouter = express.Router();
 
+userRouter.get("/", userAdminAuthorization, async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 userRouter.get("/:id", userAdminAuthorization, async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
