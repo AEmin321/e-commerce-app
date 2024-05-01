@@ -19,10 +19,20 @@ export const verifyUser = (req, res, next) => {
 
 export const userAuthorization = (req, res, next) => {
   verifyUser(req, res, () => {
-    if (req.user.id === req.params.id || req.user.idAdmin) {
+    if (req.user.id === req.params.id || req.user.isAdmin) {
       next();
     } else {
       res.status(403).json("You don't have permission to do that.");
+    }
+  });
+};
+
+export const userAdminAuthorization = (req, res, next) => {
+  verifyUser(req, res, () => {
+    if (req.user.isAdmin) {
+      next();
+    } else {
+      res.status(403).json("You don't have permision to do that.");
     }
   });
 };
