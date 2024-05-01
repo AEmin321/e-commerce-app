@@ -1,9 +1,10 @@
 import jwt from "jsonwebtoken";
 
 export const verifyUser = (req, res, next) => {
-  const token = req.headers.token;
+  const authToken = req.headers.token;
 
-  if (token) {
+  if (authToken) {
+    const token = authToken.split(" ")[1];
     jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) {
         res.status(403).json("Your token is not valid.");

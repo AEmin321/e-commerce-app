@@ -1,5 +1,6 @@
 import express from "express";
 import { userAuthorization } from "../middlewares/verifyToken.js";
+import CryptoJS from "crypto-js";
 import User from "../models/User.js";
 
 const userRouter = express.Router();
@@ -13,8 +14,9 @@ userRouter.put("/:id", userAuthorization, async (req, res) => {
     req.body.password = CryptoJS.AES.encrypt(
       req.body.password,
       process.env.SECRET
-    );
+    ).toString();
   }
+  console.log("authorized");
   try {
     const updatedUser = await User.findByIdAndUpdate(
       req.params.id,
