@@ -41,4 +41,33 @@ productRouter.put("/:id", userAdminAuthorization, async (req, res) => {
   }
 });
 
+productRouter.get("/:id", async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.status(200).json(product);
+  } catch (error) {
+    res.status(500).json("Can't find the product.");
+  }
+});
+
+productRouter.get("/", async (req, res) => {
+  try {
+    const newestQuery = req.query.new;
+    const categoryQery = req.query.category;
+    let products;
+    if (newestQuery) {
+      products = await Product.find().sort({ createdAt: -1 }).limit(5);
+    } else if (categoryQery) {
+      products = await Product.find({
+        categories: { $in: [categoryQery] },
+      });
+    } else {
+      products = await Product.find();
+    }
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 export default productRouter;
