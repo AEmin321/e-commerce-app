@@ -14,4 +14,21 @@ productRouter.post("/", userAdminAuthorization, async (req, res) => {
   }
 });
 
+productRouter.put("/:id", userAdminAuthorization, async (req, res) => {
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      {
+        new: true,
+      }
+    );
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json("Authentication error");
+  }
+});
+
 export default productRouter;
