@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dontenv from "dotenv";
 
 import userRouter from "./controllers/users.js";
+import productRouter from "./controllers/products.js";
 import authRouter from "./controllers/auth.js";
 
 dontenv.config();
@@ -19,8 +20,9 @@ mongoose
     console.log("Can't connect to database");
   });
 
-app.use("/user/hi", userRouter);
+app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/products", productRouter);
 
 app.listen(process.env.PORT || 3002, () => {
   console.log("Server is running.");
