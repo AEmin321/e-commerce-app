@@ -14,6 +14,16 @@ productRouter.post("/", userAdminAuthorization, async (req, res) => {
   }
 });
 
+productRouter.delete("/:id", userAdminAuthorization, async (req, res) => {
+  const id = req.params.id;
+  try {
+    await Product.findByIdAndDelete(id);
+    res.status(200).json("Product deleted successfully.");
+  } catch (error) {
+    res.status("500").json("Can't find the product.");
+  }
+});
+
 productRouter.put("/:id", userAdminAuthorization, async (req, res) => {
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
