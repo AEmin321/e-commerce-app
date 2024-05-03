@@ -1,8 +1,25 @@
 import express from "express";
 import Cart from "../models/Cart";
-import { verifyUser } from "../middlewares/verifyToken";
+import { verifyUser, userAuthorization } from "../middlewares/verifyToken";
 
 const cartRouter = express.Router();
+
+cartRouter.put("/:id", userAuthorization, async (req, res) => {
+  try {
+    const updatedCart = await Cart.findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: req.body,
+      },
+      {
+        new: true,
+      }
+    );
+    res.status(200).json(updatedCart);
+  } catch (error) {
+    res.status(500).json("Authentication error");
+  }
+});
 
 cartRouter.post("/", verifyUser, async (req, res) => {
   try {
