@@ -7,6 +7,25 @@ import {
 
 const orderRouter = express.Router();
 
+orderRouter.delete("/:id", userAdminAuthorization, async (req, res) => {
+  const id = req.params.id;
+  try {
+    await Order.findByIdAndDelete(id);
+    res.status(200).json("cart removed successfully.");
+  } catch (error) {
+    res.status("500").json(error);
+  }
+});
+
+orderRouter.get("/:userId", userAuthorization, async (req, res) => {
+  try {
+    const orders = await Order.find({ userId: req.params.userId });
+    res.status(200).json(orders);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 orderRouter.post("/", userAuthorization, async (req, res) => {
   try {
     const newOrder = new Order(req.body);
