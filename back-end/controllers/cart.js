@@ -1,6 +1,10 @@
 import express from "express";
-import Cart from "../models/Cart";
-import { verifyUser, userAuthorization } from "../middlewares/verifyToken";
+import Cart from "../models/Cart.js";
+import {
+  verifyUser,
+  userAuthorization,
+  userAdminAuthorization,
+} from "../middlewares/verifyToken.js";
 
 const cartRouter = express.Router();
 
@@ -41,7 +45,7 @@ cartRouter.post("/", verifyUser, async (req, res) => {
   }
 });
 
-cartRouter.get("/", userAuthorization, async (req, res) => {
+cartRouter.get("/", userAdminAuthorization, async (req, res) => {
   try {
     const carts = await Cart.find();
     res.status(200).json(carts);
