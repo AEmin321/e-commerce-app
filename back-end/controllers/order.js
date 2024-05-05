@@ -26,6 +26,15 @@ orderRouter.get("/:userId", userAuthorization, async (req, res) => {
   }
 });
 
+orderRouter.get("/", userAdminAuthorization, async (req, res) => {
+  try {
+    const orders = await order.find();
+    res.status(200).json(orders);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 orderRouter.post("/", userAuthorization, async (req, res) => {
   try {
     const newOrder = new Order(req.body);
