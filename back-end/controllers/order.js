@@ -35,6 +35,32 @@ orderRouter.get("/", userAdminAuthorization, async (req, res) => {
   }
 });
 
+orderRouter.get("/monthly", async (req, res) => {
+  const date = new Date();
+  const lastMonth = new Date(date.setMonth(date.getMonth() - 1));
+  const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));
+  try {
+    const monthly_data = await Order.aggregate([
+      {
+        $match: { createdAt: { $gte: previousMonth } },
+      },
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+          sales: "$amount",
+        },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: "$sales" },
+        },
+      },
+    ]);
+    res.status(200).json(monthly_data);
+  } catch (error) {}
+});
+
 orderRouter.post("/", userAuthorization, async (req, res) => {
   try {
     const newOrder = new Order(req.body);
@@ -61,3 +87,5 @@ orderRouter.put("/:id", userAdminAuthorization, async (req, res) => {
     res.status(500).json("Authentication error");
   }
 });
+
+export default orderRouter;

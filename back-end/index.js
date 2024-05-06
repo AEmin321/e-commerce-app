@@ -5,6 +5,8 @@ import dontenv from "dotenv";
 import userRouter from "./controllers/users.js";
 import productRouter from "./controllers/products.js";
 import authRouter from "./controllers/auth.js";
+import orderRouter from "./controllers/order.js";
+import cartRouter from "./controllers/cart.js";
 
 dontenv.config();
 const app = express();
@@ -23,6 +25,8 @@ mongoose
 app.use("/api/users", userRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/products", productRouter);
+app.use("/api/orders", orderRouter);
+app.use("/api/carts", cartRouter);
 
 app.listen(process.env.PORT || 3002, () => {
   console.log("Server is running.");
